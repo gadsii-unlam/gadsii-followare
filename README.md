@@ -1,7 +1,7 @@
-# [Nombre del equipo]
+# Followare
 
-Integrantes: [nombre 1], [nombre 2], [nombre 3], [nombre 4], [nombre 5]
+Integrantes: Anabela Trinidad Cejas, Maira Farias, Martina Iara García, Micaela Abril Marrone, Lucas Mateo Sacks
 
-Producto: [una línea describiendo el producto — se completa en el TP1]
+Producto: Aplicacion Asistente Estudiante que combina integracion con miel e integraconsulta junto con una guia materias con catedras, cursos, progreso alumno, promedio, etc.
 
-Segmento de la comunidad UNLaM: [se completa en el TP1]
+Segmento de la comunidad UNLaM: El segmento de la comunidad UNLaM son estudiantes de cualquier carrera.
