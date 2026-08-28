@@ -109,8 +109,7 @@ Se identificaron tres usuarios reales pertenecientes al segmento seleccionado:
 
 * **Asumimos que los estudiantes utilizarían Followare de manera recurrente durante el cuatrimestre.**
   **Evidencia:** los usuarios manifiestan que utilizarían la aplicación varias veces durante la cursada.
-8.Supuesto crítico
 
-**Asumimos que los estudiantes consideran un problema tener la información académica distribuida entre diferentes sistemas.**
-
-**Evidencia:** los usuarios manifiestan que les resulta incómodo consultar información en diferentes plataformas y que preferirían tenerla centralizada.
+* **Supuesto crítico**
+  **Asumimos que los estudiantes consideran un problema tener la información académica distribuida entre diferentes sistemas.**
+  **Evidencia:** los usuarios manifiestan que les resulta incómodo consultar información en diferentes plataformas y que preferirían tenerla centralizada.
