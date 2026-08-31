@@ -1,8 +1,8 @@
 # Brief de Producto
 
-## Versión 1 — TP1 (26/08/2026)
+## Versión 2 — TP2 (30/08/2026)
 
-**Qué cambió respecto de la versión anterior y por qué:** esta es la primera versión del brief, por lo que no existe una versión anterior con la cual compararla. Esta versión consolida las definiciones tomadas durante el TP1: el segmento de estudiantes de la UNLaM que actualmente cursan materias, el producto Followare, el problema que busca resolver, sus funcionalidades principales, las integraciones previstas, los grupos de usuarios y los supuestos planteados, incluyendo el supuesto crítico. Se registra esta versión como base para poder documentar y comparar los cambios que surjan durante los siguientes trabajos prácticos.
+**Qué cambió respecto de la versión anterior y por qué:** Luego de analizar a distintos usuarios mediante la técnica de encuesta, se incorpora el perfil de los usuarios reales y los hallazgos obtenidos durante el relevamiento. Los supuestos que teníamos asumidos fueron confrontados con la evidencia obtenida, e indagar sobre la problemática planteada permitió identificar cuáles son las dificultades que los estudiantes enfrentan en su día a día. Los resultados obtenidos permitieron formular la hipótesis de valor y confirmar que el segmento y la problemática planteada inicialmente se encuentran alineados con las necesidades identificadas durante el relevamiento. Por este motivo, no fue necesario modificar la definición general del producto, sino incorporar y sustentar sus definiciones a partir de la información obtenida de usuarios reales.
 
 ---
 
@@ -113,3 +113,115 @@ Se identificaron tres usuarios reales pertenecientes al segmento seleccionado:
 * **Supuesto crítico:**
   **Asumimos que los estudiantes consideran un problema tener la información académica distribuida entre diferentes sistemas.**
   **Evidencia:** los usuarios manifiestan que les resulta incómodo consultar información en diferentes plataformas y que preferirían tenerla centralizada.
+
+---
+
+## 7. Perfil del Usuario Real
+
+A partir de las respuestas obtenidas, el usuario primario de Followare está representado por estudiantes de distintas carreras de la UNLaM que actualmente se encuentran cursando materias y utilizan habitualmente herramientas tecnológicas. Los tres usuarios analizados presentan una relación avanzada con la tecnología y utilizan MIEL varias veces durante el día. Esto demuestra que el acceso a una aplicación digital no representa una barrera importante para este grupo.
+
+Sin embargo, existen diferencias según el momento de la carrera. El usuario de Contador Público se encuentra en cuarto año y tiene necesidades relacionadas con la organización y planificación de una trayectoria académica más avanzada, mientras que los usuarios de Trabajo Social y Kinesiología se encuentran en primer año y todavía están familiarizándose con la organización de la carrera.
+
+---
+
+## 8. Necesidades reales
+
+**Centralizar información académica**
+
+Los usuarios consultan información en diferentes sistemas y consideran útil, aunque con distintos matices, contar con un lugar que facilite el acceso a la información universitaria. El usuario de Contador Público considera que una solución unificada podría ayudar a mejorar la organización. El usuario de Kinesiología también considera útil evitar tener que ingresar separadamente a distintas plataformas.
+
+Sin embargo, el usuario de Trabajo Social plantea una diferencia importante: considera que la información administrativa y la académica deberían mantenerse separadas. Este resultado no implica necesariamente que la información deba permanecer en plataformas diferentes, sino que una plataforma unificada podría organizar la información en perfiles o secciones diferenciadas, por ejemplo, un perfil académico para consultar materias, cursadas, notas y progreso, y un perfil administrativo para realizar trámites y consultar información relacionada. De esta manera, Followare podría centralizar el acceso sin mezclar distintos tipos de información.
+
+**Recibir información importante de manera oportuna**
+
+Los tres usuarios manifestaron haber recibido tarde alguna información de MIEL. Los tipos de información que consideran útiles para recibir mediante notificaciones incluyen: mensajes de profesores, nuevos materiales, cambios de aula, cambios en la modalidad de cursada, avisos inesperados, fechas de inscripción, recordatorios de evaluaciones y materiales necesarios para próximas clases. El usuario de Contador Público fue particularmente específico respecto de la necesidad de anticiparse a cambios inesperados, como modificaciones de aulas o modalidad de cursada.
+
+**Conocer información de las materias antes de inscribirse**
+
+Los usuarios utilizan principalmente Intraconsulta para consultar horarios y comisiones. En cuanto a los profesores, ninguno de los tres usuarios manifestó conocer siempre de antemano qué docente estará en cada comisión. Los usuarios de Trabajo Social y Kinesiología indicaron que generalmente se enteran del profesor cuando comienzan las clases.
+
+El usuario de Contador Público como alumno de 4to año, considera muy importante conocer al profesor antes de inscribirse y utiliza recomendaciones de compañeros para conocer quién dicta cada comisión. Esto permite identificar una posible necesidad relacionada con la información previa a la inscripción.
+
+---
+
+## 9. Problemas y frustraciones concretas
+
+**La información está distribuida entre diferentes sistemas**
+
+Los estudiantes deben utilizar MIEL e Intraconsulta para consultar diferentes tipos de información. Esto genera la necesidad de recordar qué información se encuentra en cada plataforma y acceder a ellas por separado.
+
+**Los estudiantes pueden enterarse tarde de información importante**
+
+Los tres usuarios respondieron que alguna vez se enteraron tarde de un mensaje, aviso o material publicado en MIEL. Por lo tanto, el problema de las novedades no consiste simplemente en no tener acceso a la información, sino en no enterarse oportunamente de que existe nueva información.
+
+**No siempre se conoce al profesor antes de elegir una comisión**
+
+Los usuarios de Trabajo Social y Kinesiología indicaron que generalmente conocen al profesor cuando comienzan las clases. Esto contrasta con el usuario de Contador Público, que considera fundamental conocer al profesor antes de inscribirse y actualmente utiliza recomendaciones de otros estudiantes para obtener esa información.
+
+**El cálculo del promedio no es una necesidad prioritaria para todos**
+
+Un resultado interesante es que los tres usuarios no demostraron una necesidad fuerte de calcular constantemente su promedio. El usuario de Contador Público y los usuarios de Trabajo Social y Kinesiología indicaron que no suelen consultar su promedio. Por lo tanto, aunque Followare puede incluir esta funcionalidad, el relevamiento indica que no debería considerarse necesariamente la principal propuesta de valor.
+
+---
+
+## 10. Contexto de uso
+
+Los estudiantes utilizan MIEL principalmente durante el día y varias veces.
+
+  * U1 ingresa entre 1 y 5 veces por día.
+
+  * U2 ingresa aproximadamente 2 o 3 veces por día.
+
+  * U3 ingresa aproximadamente 3 veces por día.
+
+Los principales motivos de ingreso son consultar mensajes o avisos, descargar materiales y consultar fechas o información de las materias. En el caso de U2 también se utiliza para entregar trabajos o actividades.
+
+Por lo tanto, Followare sería utilizado principalmente durante el día y a lo largo de la cursada, especialmente cuando el estudiante necesita verificar si existen novedades, consultar información de una materia o revisar fechas.
+
+El relevamiento también muestra que el uso de MIEL es recurrente, por lo que una funcionalidad de notificaciones podría reducir la necesidad de ingresar únicamente para comprobar si existe alguna novedad.
+
+---
+
+## 11. Hipótesis de valor
+
+Creemos que los estudiantes de la UNLaM que actualmente cursan materias tienen el problema de que deben consultar diferentes plataformas y pueden enterarse tarde de información importante de sus materias.
+
+Nuestra solución es Followare, una aplicación que centraliza y facilita el acceso a información académica de MIEL e Intraconsulta y envía notificaciones sobre novedades relevantes, materiales, mensajes y fechas.
+
+Sabremos que estamos en lo correcto cuando los estudiantes prueben el MVP de Followare y validen que la centralización de la información y las notificaciones les facilitan el acceso a las novedades y a la información relevante de sus materias.
+
+---
+
+## 12. Estado de supuestos
+
+**1. Asumimos que los estudiantes tienen dificultades para consultar información académica porque deben utilizar diferentes sistemas de la universidad.**
+  **Estado:** Confirmado.
+  **Evidencia:** Los usuarios utilizan MIEL e Intraconsulta para acceder a diferentes tipos de información. Sin embargo, U2 considera que podría ser mejor mantener separada la información administrativa de la académica.
+
+**2. Asumimos que los estudiantes necesitan consultar con frecuencia su progreso académico.**
+  **Estado:** Refutado.
+  **Evidencia:** Los tres usuarios indicaron que no suelen consultar su promedio. Esto muestra que el seguimiento del progreso académico no aparece como una necesidad frecuente para estos usuarios.
+
+**3. Asumimos que los estudiantes quieren conocer de manera sencilla qué materias les faltan para completar su carrera.**
+  **Estado:** Sin evidencia.
+  **Evidencia:** La encuesta no preguntó directamente con qué frecuencia consultan las materias pendientes ni si consideran problemática esta tarea.
+
+**4. Asumimos que los estudiantes tienen dificultades para mantenerse al tanto de las novedades publicadas en MIEL.**
+  **Estado:** Confirmado.
+  **Evidencia:** Los tres usuarios indicaron que alguna vez se enteraron tarde de un mensaje, aviso o material publicado en MIEL.
+
+**5. Asumimos que recibir notificaciones sobre nuevas publicaciones o materiales sería útil para los estudiantes.**
+  **Estado:** Confirmado.
+  **Evidencia:** Los usuarios manifestaron interés en recibir notificaciones de mensajes, materiales, cambios, recordatorios y otras novedades.
+
+**6. Asumimos que los estudiantes consideran útil tener en un mismo lugar la información de MIEL e Intraconsulta.**
+  **Estado:** Confirmado parcialmente.
+  **Evidencia:** U1 y U3 consideran útil centralizar o facilitar el acceso, mientras que U2 prefiere separar la información administrativa de la académica.
+
+**7. Asumimos que los estudiantes utilizarían Followare de manera recurrente durante el cuatrimestre.**
+  **Estado:** Confirmado.
+  **Evidencia:** Los tres usuarios utilizan MIEL varias veces al día y tienen necesidades recurrentes relacionadas con mensajes, materiales y fechas. Esto respalda un uso frecuente de una solución como Followare.
+
+**Supuesto crítico: Asumimos que los estudiantes consideran un problema tener la información académica distribuida entre diferentes sistemas.**
+  **Estado:** Confirmado
+  **Evidencia:** Los usuarios utilizan MIEL e Intraconsulta para consultar información diferente y consideran útil facilitar el acceso a ella. Sin embargo, el usuario de Trabajo Social plantea que la información académica y administrativa debería mantenerse diferenciada, por lo que la necesidad parece estar más relacionada con facilitar y organizar el acceso a la información.
