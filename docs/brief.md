@@ -8,7 +8,7 @@
 
 ## 1. Segmento elegido
 
-**Segmento:** estudiantes de la UNLaM que se encuentran actualmente cursando materias, independientemente de la carrera a la que pertenezcan.
+**Segmento:** son estudiantes regulares de la UNLaM que se encuentran actualmente cursando materias, independientemente de la carrera a la que pertenezcan siendo esta una carrera de grado.
 
 **Tamaño estimado:** aproximadamente 80.000 estudiantes de la UNLaM.
 
