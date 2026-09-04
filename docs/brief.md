@@ -118,7 +118,9 @@ Se identificaron tres usuarios reales pertenecientes al segmento seleccionado:
 
 ## 7. Perfil del Usuario Real
 
-A partir de las respuestas obtenidas, el usuario primario de Followare está representado por estudiantes de distintas carreras de la UNLaM que actualmente se encuentran cursando materias y utilizan habitualmente herramientas tecnológicas. Los tres usuarios analizados presentan una relación avanzada con la tecnología y utilizan MIEL varias veces durante el día. Esto demuestra que el acceso a una aplicación digital no representa una barrera importante para este grupo.
+A partir de las respuestas obtenidas, el usuario primario de Followare está representado por estudiantes de distintas carreras de grado de la UNLaM que actualmente se encuentran cursando materias y utilizan habitualmente herramientas tecnológicas. Los tres usuarios analizados presentan una relación avanzada con la tecnología y utilizan MIEL varias veces durante el día. Esto demuestra que el acceso a una aplicación digital no representa una barrera importante para este grupo.
+
+La encuesta recibió un total de cinco respuestas. Se decidió relevar a más de tres estudiantes con el objetivo de obtener una visión más general del problema que se busca solucionar y conocer diferentes experiencias y necesidades. Para el análisis del grupo de usuarios primario, se seleccionaron tres respuestas correspondientes a estudiantes de Contador Público, Trabajo Social y Kinesiología, identificados como U1, U2 y U3. Las otras dos respuestas no fueron incorporadas al análisis, ya que no correspondían a los perfiles de usuarios seleccionados para este relevamiento.
 
 Sin embargo, existen diferencias según el momento de la carrera. El usuario de Contador Público se encuentra en cuarto año y tiene necesidades relacionadas con la organización y planificación de una trayectoria académica más avanzada, mientras que los usuarios de Trabajo Social y Kinesiología se encuentran en primer año y todavía están familiarizándose con la organización de la carrera.
 
@@ -188,7 +190,7 @@ Creemos que los estudiantes de la UNLaM que actualmente cursan materias tienen e
 
 Nuestra solución es Followare, una aplicación que centraliza y facilita el acceso a información académica de MIEL e Intraconsulta y envía notificaciones sobre novedades relevantes, materiales, mensajes y fechas.
 
-Sabremos que estamos en lo correcto cuando los estudiantes prueben el MVP de Followare y validen que la centralización de la información y las notificaciones les facilitan el acceso a las novedades y a la información relevante de sus materias.
+Sabremos que estamos en lo correcto si, durante la prueba del MVP, al menos 2 de los 3 estudiantes indican que Followare les facilita el acceso a la información de sus materias y consideran útiles las notificaciones de novedades. Se establece este criterio tomando como referencia que el relevamiento inicial fue realizado con 3 usuarios.
 
 ---
 
@@ -215,8 +217,8 @@ Sabremos que estamos en lo correcto cuando los estudiantes prueben el MVP de Fol
   **Evidencia:** Los usuarios manifestaron interés en recibir notificaciones de mensajes, materiales, cambios, recordatorios y otras novedades.
 
 **6. Asumimos que los estudiantes consideran útil tener en un mismo lugar la información de MIEL e Intraconsulta.**
-  **Estado:** Confirmado parcialmente.
-  **Evidencia:** U1 y U3 consideran útil centralizar o facilitar el acceso, mientras que U2 prefiere separar la información administrativa de la académica.
+  **Estado:** Confirmado.
+  **Evidencia:** U1 y U3 consideran útil centralizar o facilitar el acceso. Pero, por otro lado, U2 prefiere separar la información administrativa de la académica. (Confirmamos el supuesto ya que 2 de 3 encuestados consideran útil centralizar las plataformas)
 
 **7. Asumimos que los estudiantes utilizarían Followare de manera recurrente durante el cuatrimestre.**
   **Estado:** Confirmado.
