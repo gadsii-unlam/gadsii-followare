@@ -1,8 +1,8 @@
 # Brief de Producto
 
-## Versión 2 — TP2 (30/08/2026)
+## Versión 3 — TP3 (08/09/2026)
 
-**Qué cambió respecto de la versión anterior y por qué:** Luego de analizar a distintos usuarios mediante la técnica de encuesta, se incorpora el perfil de los usuarios reales y los hallazgos obtenidos durante el relevamiento. Los supuestos que teníamos asumidos fueron confrontados con la evidencia obtenida, e indagar sobre la problemática planteada permitió identificar cuáles son las dificultades que los estudiantes enfrentan en su día a día. Los resultados obtenidos permitieron formular la hipótesis de valor y confirmar que el segmento y la problemática planteada inicialmente se encuentran alineados con las necesidades identificadas durante el relevamiento. Por este motivo, no fue necesario modificar la definición general del producto, sino incorporar y sustentar sus definiciones a partir de la información obtenida de usuarios reales.
+**Qué cambió respecto de la versión anterior y por qué:** Tomando los datos de los primeros dos TP encaramos el Scope del MVP donde definimos que flujos decidimos incluir en el mismo y que flujos decidimos dejar afuera tomando en cuenta las encuestas con los distintos usuarios. A partir de esos flujos definimos que se construye y que se simula ademas del flujo principal y los atributos de usabilidad que consideramos que fueron mayormente requeridos por los usuarios encuestados.
 
 ---
 
@@ -227,3 +227,44 @@ Sabremos que estamos en lo correcto si, durante la prueba del MVP, al menos 2 de
 **Supuesto crítico: Asumimos que los estudiantes consideran un problema tener la información académica distribuida entre diferentes sistemas.**
   **Estado:** Confirmado
   **Evidencia:** Los usuarios utilizan MIEL e Intraconsulta para consultar información diferente y consideran útil facilitar el acceso a ella. Sin embargo, el usuario de Trabajo Social plantea que la información académica y administrativa debería mantenerse diferenciada, por lo que la necesidad parece estar más relacionada con facilitar y organizar el acceso a la información.
+
+## 13. Scope del MVP
+
+| Incluido en el MVP | Para qué parte de la hipótesis sirve |
+|---|---|
+| Notificaciones (MIEL + Intraconsulta) | Para obtener notificaciones sobre novedades relevantes, materiales, mensajes y fechas |
+| Materias en curso + Contenidos | Para facilitar el acceso a la información de las materias |
+| Correlatividades | Para centralizar el acceso a la información académica |
+
+
+| Excluido del MVP | Por qué se excluye |
+|---|---|
+| Cálculo de promedio | Teniendo en cuenta los resultados de las encuestas, no vemos que sea una funcionalidad importante para los estudiantes |
+| Docentes – Funcionalidad completa | Son usuarios secundarios que no son necesarios para el MVP, ya que solo aparecen desde un rol de apoyo |
+| Trámites generales (ej.: solicitud de constancia de examen) | No vemos necesario incluirlo en el MVP debido a que no es una funcionalidad que los estudiantes usen diariamente |
+| Oferta de materias | No vemos necesario incluirlo en el MVP debido a que no es una funcionalidad que los estudiantes utilicen diariamente |
+
+### Qué se construye y qué se simula 
+
+| Elemento | Se construye | Se simula / se resuelve a mano | Por qué |
+|---|---|---|---|
+| Notificaciones | Sí | Se simula | Para dar una sensación de que la notificación es real |
+| Materias en curso | Sí | Se resuelve a mano | Para que el alumno tenga un set de materias cargada |
+| Contenidos | Sí | Se resuelve a mano | Para que el alumno, al entrar a una materia, vea contenido y pueda descargarlo |
+| Correlatividades | Sí | Se resuelve a mano | Para que el alumno pueda ver una integración a Intraconsulta en el MVP |
+
+### Flujo principal del MVP
+
+Creemos que el flujo principal es el uso de las notificaciones. Los pasos serían los siguientes:
+
+1. El usuario recibe una notificación (puede ser por un mensaje de algún profesor, carga de material, carga de fecha relevante o alguna otra novedad).
+2. El usuario accede a la aplicación.
+3. El usuario visualiza el contenido de la notificación.
+4. El usuario cierra la notificacion y visualiza las materias en curso
+
+Tomando los demás elementos del MVP vemos otros flujos menos importantes, pero creemos que aportan valor al usuario.
+
+### Atributos de usabilidad
+
+* **Satisfacción:** los usuarios expresan que pierden tiempo en acceder a las plataformas para revisar si tienen novedades.
+* **Eficiencia:** los usuarios expresan que consultan el plan de estudios en Intraconsulta o en otros sitios de la UNLaM, lo cual es poco eficiente.
