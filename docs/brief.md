@@ -2,7 +2,7 @@
 
 ## Versión 3 — TP3 (08/09/2026)
 
-**Qué cambió respecto de la versión anterior y por qué:** Tomando los datos de los primeros dos TP encaramos el Scope del MVP donde definimos que flujos decidimos incluir en el mismo y que flujos decidimos dejar afuera tomando en cuenta las encuestas con los distintos usuarios. A partir de esos flujos definimos que se construye y que se simula ademas del flujo principal y los atributos de usabilidad que consideramos que fueron mayormente requeridos por los usuarios encuestados.
+**Qué cambió respecto de la versión anterior y por qué:** A partir de los resultados obtenidos en los primeros dos TP, definimos el scope del MVP, determinando qué funcionalidades y flujos decidimos incluir y cuáles dejar afuera, tomando como referencia los hallazgos obtenidos en el relevamiento con los usuarios. A partir de este scope, definimos qué elementos se construirán y cuáles se simularán, además de establecer el flujo principal del MVP y los atributos de usabilidad prioritarios, seleccionados en función de las necesidades identificadas en los usuarios relevados.
 
 ---
 
@@ -241,21 +241,21 @@ Sabremos que estamos en lo correcto si, durante la prueba del MVP, al menos 2 de
 |---|---|
 | Cálculo de promedio | Teniendo en cuenta los resultados de las encuestas, no vemos que sea una funcionalidad importante para los estudiantes |
 | Docentes – Funcionalidad completa | Son usuarios secundarios que no son necesarios para el MVP, ya que solo aparecen desde un rol de apoyo |
-| Trámites generales (ej.: solicitud de constancia de examen) | No vemos necesario incluirlo en el MVP debido a que no es una funcionalidad que los estudiantes usen diariamente |
-| Oferta de materias | No vemos necesario incluirlo en el MVP debido a que no es una funcionalidad que los estudiantes utilicen diariamente |
+| Trámites generales (ej.: solicitud de constancia de examen) | Se excluyen porque corresponden a información administrativa y no son necesarias para probar la hipótesis de valor del MVP, centrada en la información académica de las materias en curso y sus novedades. |
+| Oferta de materias | No es necesaria para probar la hipótesis de valor del MVP, que se centra principalmente en facilitar el acceso a la información de las materias en curso y recibir oportunamente sus novedades. |
 
 ### Qué se construye y qué se simula 
 
 | Elemento | Se construye | Se simula / se resuelve a mano | Por qué |
 |---|---|---|---|
-| Notificaciones | Sí | Se simula | Para dar una sensación de que la notificación es real |
-| Materias en curso | Sí | Se resuelve a mano | Para que el alumno tenga un set de materias cargada |
-| Contenidos | Sí | Se resuelve a mano | Para que el alumno, al entrar a una materia, vea contenido y pueda descargarlo |
-| Correlatividades | Sí | Se resuelve a mano | Para que el alumno pueda ver una integración a Intraconsulta en el MVP |
+| Notificaciones | Sí | Se simula: La generación y llegada de las notificaciones  | Permite probar si el usuario encuentra útil recibir novedades sin necesidad de implementar todavía la integración real con MIEL e Intraconsulta.|
+| Materias en curso | Sí | Se resuelve a mano: Carga inicial de las materias | Se cargará previamente un conjunto de materias para que el usuario pueda probar el flujo del MVP|
+| Contenidos | Sí | Se resuelve a mano: Carga de contenidos| Para asi el alumno al entrar una materia vea contenido y pueda descargarlo |
+| Correlatividades | Sí | Se resuelve a mano: Datos provenientes de Intraconsulta  | Permite simular la integración con Intraconsulta sin desarrollar la integración real durante el MVP. |
 
 ### Flujo principal del MVP
 
-Creemos que el flujo principal es el uso de las notificaciones. Los pasos serían los siguientes:
+El flujo principal se centra en la recepción y consulta de una notificación, ya que este flujo permite probar directamente si Followare facilita el acceso oportuno a información relevante de las materias: 
 
 1. El usuario recibe una notificación (puede ser por un mensaje de algún profesor, carga de material, carga de fecha relevante o alguna otra novedad).
 2. El usuario accede a la aplicación.
@@ -266,5 +266,65 @@ Tomando los demás elementos del MVP vemos otros flujos menos importantes, pero 
 
 ### Atributos de usabilidad
 
-* **Satisfacción:** los usuarios expresan que pierden tiempo en acceder a las plataformas para revisar si tienen novedades.
-* **Eficiencia:** los usuarios expresan que consultan el plan de estudios en Intraconsulta o en otros sitios de la UNLaM, lo cual es poco eficiente.
+* **Satisfacción:** se prioriza porque los tres usuarios manifestaron haber recibido tarde información importante de MIEL y expresaron interés en recibir notificaciones sobre mensajes, materiales, cambios y otras novedades. Una experiencia que permita enterarse de estas novedades puede reducir la frustración asociada a perder información importante. 
+* **Eficiencia:** se prioriza porque los usuarios consultan MIEL varias veces durante el día para revisar mensajes, materiales y fechas. Además, deben ingresar a diferentes sistemas para consultar información académica, por lo que reducir la cantidad de pasos y accesos necesarios resulta especialmente relevante.
+
+### Fundamentación de las decisiones
+
+### Anclaje
+
+Las principales decisiones tomadas en el diseño del wireframe se basaron en los resultados obtenidos durante el relevamiento realizado en el TP2.
+
+#### Decisión 1 — Bandeja de novedades como elemento central del flujo
+
+Se decidió priorizar las notificaciones dentro del flujo principal porque los usuarios manifestaron que utilizan MIEL con frecuencia para consultar novedades e información de sus materias. Por ejemplo, ante la pregunta sobre la frecuencia de uso, uno de los usuarios respondió **“2 o 3 veces en el dia”**, mientras que otro indicó **“Entre 1 y 5 veces, para verificar novedades o consultar material bibliografico.”**
+
+Además, al consultar para qué utilizaban MIEL, se mencionaron actividades como **“Ver si hay nuevos mensajes o avisos., Descargar materiales., Consultar fechas o información de las materias.”**
+
+Estos resultados respaldan la decisión de que Followare permita acceder rápidamente a las novedades y contenidos relevantes, evitando pasos innecesarios.
+
+#### Decisión 2 — Acceso directo al contenido desde la notificación
+
+La alternativa B fue diseñada buscando reducir la cantidad de pasos necesarios para consultar una novedad. Esta decisión se relaciona con el uso frecuente que los usuarios hacen de MIEL y con la necesidad de consultar rápidamente mensajes, materiales y fechas.
+
+Esta decisión se fundamenta en que uno de los usuarios manifestó: **“Sí, varias veces me entre tarde de mensajes”**.
+
+Además, los usuarios utilizan MIEL varias veces durante el día, por lo que consideramos importante que el acceso a una novedad requiera la menor cantidad posible de pasos.
+
+#### Decisión 3 — Agrupamiento de las novedades por materia
+
+El wireframe organiza las novedades vinculándolas con las materias en curso. Esta decisión busca facilitar la organización de la información académica, ya que los estudiantes actualmente deben utilizar diferentes sistemas para acceder a distintos tipos de información.
+
+El TP2 identificó como problema concreto que los estudiantes deben ingresar a MIEL e Intraconsulta por separado.
+
+---
+
+### Descarte
+
+#### Rechazo 1 — Alternativa A: navegación paso a paso
+
+Claude propuso una alternativa centrada en la **facilidad de aprendizaje**, con onboarding de tres pantallas, breadcrumb, una acción principal por pantalla y una navegación más guiada.
+
+El equipo decidió no utilizar esta alternativa porque el relevamiento mostró que los tres usuarios tienen una relación avanzada con la tecnología y utilizan MIEL varias veces durante el día. Por lo tanto, consideramos que agregar pasos y acompañamiento para facilitar el primer uso no responde al principal problema detectado.
+
+En su lugar, se eligió la **Alternativa B**, que reduce la cantidad de pasos y prioriza la eficiencia.
+
+#### Rechazo 2 — Alternativa C: confirmaciones y mayor control
+
+Claude propuso una alternativa orientada a la satisfacción, que incorporaba confirmaciones antes de determinadas acciones y mayor control sobre las notificaciones.
+
+El equipo decidió no adoptar esta estructura como alternativa principal porque el relevamiento mostró que los usuarios consultan MIEL con frecuencia y necesitan acceder rápidamente a mensajes, materiales y fechas. Agregar confirmaciones y pasos adicionales podía aumentar el tiempo necesario para consultar una novedad, entrando en conflicto con la necesidad de eficiencia identificada en el relevamiento.
+
+Por este motivo, se reemplazó esta propuesta por la **Alternativa B**, que concentra las novedades y permite acceder directamente al contenido.
+
+---
+
+### El elemento crítico
+
+El elemento que consideramos crítico para el MVP son las **notificaciones sobre novedades de las materias**. Este componente es el que permite probar de manera más directa la parte principal de nuestra hipótesis relacionada con el problema de enterarse tarde de información importante.
+
+Si elimináramos las notificaciones, el MVP todavía permitiría consultar materias y contenidos, pero perdería la posibilidad de comprobar si Followare ayuda a los estudiantes a enterarse oportunamente de mensajes, materiales, fechas y otras novedades. Esto afectaría directamente la capacidad de confirmar o refutar la hipótesis de valor, ya que los tres usuarios manifestaron haber recibido tarde información de MIEL y consideraron útiles las notificaciones.
+
+Por otro lado, consideramos que **Correlatividades** podría eliminarse sin perder la capacidad de validar la hipótesis. La incluimos porque aporta valor al objetivo de centralizar información académica y permite probar una parte de la integración con Intraconsulta, pero no es necesaria para comprobar si las notificaciones y el acceso a la información de las materias resuelven el problema principal detectado.
+
+Por lo tanto, las **notificaciones** son el elemento que sostiene el experimento, mientras que las **correlatividades** funcionan como una funcionalidad complementaria que aporta valor al MVP sin ser indispensable para su validación.
