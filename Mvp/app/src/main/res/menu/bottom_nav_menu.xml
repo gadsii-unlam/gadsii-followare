@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_novedades"
+        android:icon="@drawable/ic_novedades"
+        android:title="@string/title_novedades" />
+    <item
+        android:id="@+id/nav_materias"
+        android:icon="@drawable/ic_materias"
+        android:title="@string/title_materias" />
+    <item
+        android:id="@+id/nav_plan"
+        android:icon="@drawable/ic_plan"
+        android:title="@string/title_plan" />
+</menu>
+
