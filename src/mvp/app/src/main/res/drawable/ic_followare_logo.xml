@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo de Followare: una "F" formada por filas de una lista, con el punto de "sin leer". -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M41,35 L41,73"
+        android:strokeColor="#0F4C81"
+        android:strokeWidth="10"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M41,35 L71,35"
+        android:strokeColor="#0F4C81"
+        android:strokeWidth="10"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M41,54 L58,54"
+        android:strokeColor="#0F4C81"
+        android:strokeWidth="10"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#3584E4"
+        android:pathData="M71,54 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+</vector>
