@@ -26,5 +26,7 @@
     <string name="perfil_email">Email</string>
     <string name="perfil_carrera">Carrera</string>
     <string name="perfil_sede">Sede</string>
+    <string name="materia_contenido">Contenido</string>
+    <string name="volver">Volver</string>
 </resources>
 

@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.unlam.followare.data.FollowareNotificationManager;
@@ -62,7 +63,11 @@ public class MainActivity extends AppCompatActivity implements FollowareReposito
         setupSimulatorFab();
 
         // Cargar vista inicial: Novedades (Home en Alternativa B)
-        loadFragment(novedadesFragment);
+        if (savedInstanceState == null) {
+            loadFragment(novedadesFragment);
+        }
+        getSupportFragmentManager().addOnBackStackChangedListener(this::actualizarBotonVolver);
+        actualizarBotonVolver();
         updateUnreadBadges();
 
         // Manejo de Deep Link desde la barra de notificaciones del celular
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements FollowareReposito
     }
 
     private void setupToolbar() {
+        binding.topAppBar.setNavigationOnClickListener(v -> getSupportFragmentManager().popBackStack());
         binding.topAppBar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_perfil) {
                 new PerfilBottomSheetDialog().show(getSupportFragmentManager(), "perfil_dialog");
@@ -109,6 +115,15 @@ public class MainActivity extends AppCompatActivity implements FollowareReposito
             }
             return false;
         });
+    }
+
+    private void actualizarBotonVolver() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            binding.topAppBar.setNavigationIcon(R.drawable.ic_arrow_back);
+            binding.topAppBar.setNavigationContentDescription(R.string.volver);
+        } else {
+            binding.topAppBar.setNavigationIcon(null);
+        }
     }
 
     private void setupNavigation() {
@@ -136,6 +151,8 @@ public class MainActivity extends AppCompatActivity implements FollowareReposito
     }
 
     private void loadFragment(Fragment fragment) {
+        // Cambiar de pestaña cierra el detalle que estuviera abierto
+        getSupportFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)

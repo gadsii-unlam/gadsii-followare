@@ -10,8 +10,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.unlam.followare.R;
 import com.unlam.followare.data.FollowareRepository;
 import com.unlam.followare.databinding.FragmentMateriasBinding;
+import com.unlam.followare.models.Materia;
 
 public class MateriasFragment extends Fragment implements FollowareRepository.OnDataChangeListener {
 
@@ -33,11 +35,19 @@ public class MateriasFragment extends Fragment implements FollowareRepository.On
         repository = FollowareRepository.getInstance(requireContext());
         repository.addListener(this);
 
-        adapter = new MateriasAdapter(requireContext());
+        adapter = new MateriasAdapter(requireContext(), this::abrirDetalle);
         binding.rvMaterias.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.rvMaterias.setAdapter(adapter);
 
         updateList();
+    }
+
+    private void abrirDetalle(Materia materia) {
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, MateriaDetalleFragment.newInstance(materia.getId()))
+                .addToBackStack(null)
+                .commit();
     }
 
     public void updateList() {
