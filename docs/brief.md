@@ -1,8 +1,8 @@
 # Brief de Producto
 
-## Versión 3 — TP3 (08/09/2026)
+## Versión 6 — TP6 (10/11/2026)
 
-**Qué cambió respecto de la versión anterior y por qué:** A partir de los resultados obtenidos en los primeros dos TP, definimos el scope del MVP, determinando qué funcionalidades y flujos decidimos incluir y cuáles dejar afuera, tomando como referencia los hallazgos obtenidos en el relevamiento con los usuarios. A partir de este scope, definimos qué elementos se construirán y cuáles se simularán, además de establecer el flujo principal del MVP y los atributos de usabilidad prioritarios, seleccionados en función de las necesidades identificadas en los usuarios relevados.
+**Qué cambió respecto de la versión anterior y por qué:** Como la prueba del TP5 sostuvo la hipótesis, el foco pasa de *qué* construir a *cómo* hacer crecer el producto. Por eso agregamos la arquitectura: cómo está armado hoy el MVP (una app Android que funciona sola, sin servidor y con datos de prueba), las decisiones que heredamos al construirlo con IA, cómo sería el producto completo (un servidor propio que se conecta con MIEL e Intraconsulta y manda avisos aunque la app esté cerrada), las restricciones técnicas de la UNLaM, las tecnologías nuevas que hacen falta y la parte con más riesgo: la conexión con MIEL.
 
 ---
 
@@ -324,6 +324,179 @@ Por este motivo, se reemplazó esta propuesta por la **Alternativa B**, que conc
 El elemento que consideramos crítico para el MVP son las **notificaciones sobre novedades de las materias**. Este componente es el que permite probar de manera más directa la parte principal de nuestra hipótesis relacionada con el problema de enterarse tarde de información importante.
 
 Si elimináramos las notificaciones, el MVP todavía permitiría consultar materias y contenidos, pero perdería la posibilidad de comprobar si Followare ayuda a los estudiantes a enterarse oportunamente de mensajes, materiales, fechas y otras novedades. Esto afectaría directamente la capacidad de confirmar o refutar la hipótesis de valor, ya que los tres usuarios manifestaron haber recibido tarde información de MIEL y consideraron útiles las notificaciones.
+
+## 14. Evaluación de usabilidad (TP4)
+
+La evaluación fue cruzada: nosotros evaluamos el wireframe de **Unlam Parking** y el equipo **Summate** evaluó el nuestro.
+
+### 14.1 Evaluación que hicimos (Unlam Parking)
+
+Antes de mirar el wireframe, definimos a su usuario: un estudiante de turno noche que llega en auto o moto, usa el celular para reservar desde su casa y para validar el ingreso al llegar, y no usa la app todos los días.
+
+Aplicamos las 10 heurísticas de Nielsen y encontramos 6 problemas:
+
+| Heurística | Problema | Severidad |
+|---|---|---|
+| H4 Prevención de errores | Se puede elegir un horario no disponible y recién se descubre al confirmar | 3 |
+| H3 Libertad y control | No se ve cómo modificar o cancelar una reserva confirmada | 3 |
+| H1 Visibilidad del estado | No queda claro si la reserva está confirmada, pendiente o cancelada | 2 |
+| H9 Recuperación de errores | No hay mensaje de error si se cargan mal los datos al iniciar sesión | 1 |
+| H10 Ayuda | Hay ayudas por pantalla, pero no una explicación general | 1 |
+| H7 Eficiencia | No hay atajos para usuarios frecuentes | 1 |
+
+**Comparación con la evaluación de la IA:**
+
+| | Cantidad |
+|---|---|
+| Problemas que encontramos los dos | 3 |
+| Problemas que encontró solo el equipo | 3 |
+| Problemas que encontró solo la IA | 5 |
+| Falsos positivos de la IA | 1 |
+
+* **Lo que se le escapa a la IA:** detalles de la pantalla real, como mensajes de estado o botones para cancelar o corregir. La IA trabajó con la descripción del diseño, no con el wireframe.
+* **Lo que se nos escapó a nosotros:** qué pasa cuando algo falla fuera del camino normal (por ejemplo, si el QR no se lee o si el usuario se arrepiente a mitad de la reserva).
+* **Falsos positivos:** la IA propuso bloquear en tiempo real los horarios ocupados y agregar un atajo para repetir la última reserva. Para este usuario no hacen falta: reserva tranquilo desde su casa (el momento de tensión es al llegar) y no va todos los días, así que no tiene un "horario habitual".
+
+**Qué nos llevamos para Followare:** probar también qué pasa cuando algo falla, y no aceptar una sugerencia de la IA sin compararla con lo que sabemos del usuario.
+
+### 14.2 Evaluación que recibimos (Summate)
+
+**Correcciones que aceptamos y entraron en el MVP:**
+
+| # | Problema | Corrección |
+|---|---|---|
+| 1 | El botón "Descargar" no confirmaba la descarga en todas las pantallas (severidad 3) | Mismo comportamiento en todas: "Descargando…" y después "Guardado" |
+| 2 | Los contadores de novedades no coincidían entre la bandeja y Materias (severidad 3) | Un solo estado de lectura por novedad, que se actualiza en todas las pantallas a la vez |
+| 3 | Al volver desde una materia abierta desde una novedad, no se regresaba a la bandeja (severidad 3) | El botón de volver respeta desde dónde llegó el usuario |
+| 4 | Solo Álgebra I se podía abrir (severidad 3) | Todas las materias se pueden abrir y tienen contenido |
+| 5 | "Abrir" significaba cosas distintas según la pantalla (severidad 2) | "Ver novedad" en la bandeja y "Abrir archivo" en el detalle |
+| 6 | La abreviatura "Cfg" no se entendía (severidad 2) | Se reemplazó por el ícono de engranaje |
+| 7 | La materia bloqueada no decía su estado (severidad 2) | Se agregó la etiqueta "Bloqueada" y se mantiene el motivo debajo |
+
+**Lo que cuestionamos:**
+
+* **"Intra":** lo mantenemos porque los propios estudiantes llaman así a Intraconsulta. Quedó para validar en la prueba del MVP.
+* **Leyenda de colores en el plan:** cada estado ya tiene su nombre escrito al lado del color, así que no hace falta una leyenda aparte.
+
+**Para después:** pantallas de error completas (sin conexión, descarga fallida). En el MVP, un error se muestra solo con un mensaje corto.
+
+**Qué aprendimos:** diseñamos cada pantalla por separado y no revisamos el recorrido completo. Los problemas más graves aparecían solo al usar la app de corrido: abrir una novedad, descargar, ir a Materias y mirar el contador.
+
+---
+
+## 15. Métricas de la prueba del MVP (TP5)
+
+**Métricas accionables:**
+
+* **Resolución desde la notificación:** cuántos usuarios (de 3) hacen lo que pide el aviso (por ejemplo, descargar el material o decir el aula nueva) usando solo la notificación o el detalle que abre, sin ayuda. Si fallan 2 o más, se rediseña la notificación.
+* **Tareas completadas sin ayuda:** cuántas de 3 tareas completa cada usuario solo con Followare. Si una tarea falla en 2 o más usuarios, se revisa dónde está ese contenido.
+
+**Métrica vanidosa descartada:** *aperturas de la app por día.* Muchas aperturas no indican éxito: pueden significar que el usuario no confía en los avisos y entra a revisar igual.
+
+**Criterio de éxito:** la hipótesis se sostiene si al menos 2 de 3 usuarios resuelven la notificación sin ayuda y cada tarea es completada por al menos 2 usuarios.
+
+**Tareas de la prueba:**
+
+1. Descargar el material de la Unidad 1 de Química.
+2. Saber si ya puede cursar Análisis Matemático II y qué materia le falta (Álgebra I).
+3. Saber a qué aula ir después de un aviso de cambio de aula.
+
+---
+
+## 16. Resultados de la prueba (TP5)
+
+* **Los 3 usuarios completaron las 3 tareas sin ayuda.** Se cumplieron las dos métricas y **la hipótesis de valor se sostiene**.
+* **Tarea 3 (cambio de aula):** fue la más rápida, en menos de 30 segundos desde el aviso. **U2 vio el aula en el texto de la notificación, sin abrir la app.** Fue el resultado que no esperábamos: el aviso tiene que traer el dato importante en el propio texto.
+* **Descarga:** el estado "Guardado" generó dudas. U1 salió de la app a buscar el PDF en Descargas y U3 tocó dos veces el botón esperando que se abriera.
+* **Navegación:** U2 confundió el filtro "Materiales" de Novedades con la sección Materias.
+* **Métrica que puede engañar:** "tareas completadas sin ayuda" dio 100 %, pero U2 tardó más de 2 minutos en la Tarea 2. Completar una tarea no significa que haya sido fácil.
+
+---
+
+## 17. Decisión: perseverar
+
+Seguimos con el mismo producto y el mismo segmento. Los problemas de la prueba son de interfaz, no de la propuesta de valor: los usuarios dijeron que usarían Followare para no tener que entrar a MIEL "por las dudas".
+
+**Próximas mejoras:**
+
+* **Abrir el archivo descargado** desde la app, para que el alumno no tenga que ir a buscarlo.
+* **Elegir qué avisos recibir** (cambios de aula, notas, avisos institucionales, etc.), para no recibir avisos que no le importan y terminar silenciando la app.
+* **Mostrar el dato importante en el texto del aviso** (el aula, la fecha, la nota).
+
+---
+
+## 18. Arquitectura actual del MVP (TP6)
+
+![Arquitectura actual del MVP](arquitectura/diagrama1-arquitectura-MVP.png)
+
+El MVP es una **app Android hecha en Java** que funciona sola dentro del celular: no tiene servidor, ni inicio de sesión, ni internet.
+
+* **Pantallas:** Novedades, Materias, Plan, Perfil y un Simulador para las pruebas.
+* **Datos:** un *repositorio* guarda todo en memoria y avisa a las pantallas cuando algo cambia. Los datos salen de un archivo de **datos de prueba** escrito en el código.
+* **Memoria del teléfono:** solo se guarda qué novedades se leyeron y qué archivos se descargaron.
+
+| Parte | Funciona de verdad | Es simulado |
+|---|---|---|
+| Notificaciones | El aviso en el celular y abrir el detalle al tocarlo | La novedad la crea el moderador con el simulador |
+| Materias y contenidos | Las pantallas y el botón de descarga | Los datos están cargados a mano y la descarga no guarda ningún archivo |
+| Correlativas | Buscar y ver previas y posteriores | El estado de cada materia está escrito a mano, no se calcula |
+| Usuario | El panel de perfil | Es un alumno inventado |
+
+---
+
+## 19. Decisiones heredadas del MVP (TP6)
+
+| Decisión | ¿Quién la tomó? | ¿La sostenemos? | Dato que la sostiene o la contradice |
+|---|---|---|---|
+| La descarga es falsa: dice "Guardado" pero no guarda ningún archivo | La herramienta | No | La contradice el TP5: U1 buscó el PDF en Descargas y U3 tocó el botón dos veces |
+| La lógica está mezclada con las pantallas: el código de descarga está copiado en 3 pantallas y el estado de las materias está escrito a mano | Nadie, salió así | No | La contradice el TP4B: la descarga se comportaba distinto en cada pantalla (problema 1) |
+
+---
+
+## 20. Producto completo (gran visión)
+
+![Gran visión de Followare](arquitectura/diagrama2-gran-vision.png)
+
+El producto completo tiene tres partes:
+
+* **App:** lo que ya hace el MVP más oferta de materias con docentes, promedio, elegir qué avisos recibir y ver archivos sin conexión.
+* **Servidor de Followare (nuevo):** recibe los pedidos de la app, revisa MIEL e Intraconsulta cada pocos minutos, manda los avisos y guarda los datos en una base de datos.
+* **Sistemas de la UNLaM:** MIEL, Intraconsulta y el inicio de sesión de la universidad.
+
+El MVP cubre solo las pantallas principales y la parte de mostrar el aviso. **El salto más grande** es que hoy la novedad se crea a mano dentro del celular, y en el producto real la tiene que detectar un servidor en MIEL y mandarla al celular aunque la app esté cerrada.
+
+---
+
+## 21. Restricciones técnicas
+
+* **Permiso de la UNLaM:** MIEL e Intraconsulta son de la universidad y no conocemos una forma pública de conectarse. Sin autorización no se puede construir. No vamos a sacar datos sin permiso ni a guardar las contraseñas de los alumnos.
+* **Datos personales:** notas y mensajes son datos personales (Ley 25.326). Se guarda solo lo necesario.
+* **No sobrecargar MIEL:** son unos 80.000 alumnos. Si cada uno consulta MIEL por su cuenta, se recarga un sistema que ya se satura en inscripciones.
+* **Uso real:** los alumnos usan el celular varias veces por día y muchas veces viajando, con mala señal. El aviso tiene que traer el dato importante en el texto (U2 vio el aula nueva sin abrir la app).
+* **Plataforma:** el MVP es solo Android. El TP2 no preguntó qué celular usan, así que iOS queda como pregunta abierta.
+* **Equipo:** somos cinco y trabajamos en Java. Elegimos tecnologías que podamos mantener.
+
+---
+
+## 22. Tecnologías nuevas
+
+| Tecnología | Para qué | Por qué |
+|---|---|---|
+| **Firebase (avisos push)** | Mandar avisos desde el servidor al celular | Sin esto el aviso no llega con la app cerrada, y el alumno vuelve a entrar "por las dudas", como hoy con MIEL (hasta 5 veces por día) |
+| **Servidor en Java (Spring Boot) + base de datos PostgreSQL** | Conectarse con la UNLaM, guardar datos y preferencias | Lo elegimos **porque el equipo ya sabe Java**. Además, una sola conexión central evita sobrecargar MIEL |
+| **Room + descargas de Android** | Room es una base de datos dentro del celular: guarda materias, novedades y la lista de archivos descargados para verlos sin internet. Los PDF se bajan con el sistema de descargas de Android y se abren con un botón "Abrir" | Los alumnos usan la app viajando (TP2 y Tarea 1 del TP5). Además resuelve lo que pasó en el TP5: U1 salió a buscar el archivo a Descargas y U3 tocó el botón dos veces. Requiere que el servidor ya entregue archivos reales |
+
+---
+
+## 23. Parte con más riesgo
+
+**La conexión con MIEL** (buscar novedades y bajar archivos).
+
+* De ella dependen los avisos, que son lo más importante del producto. Si falla, el alumno se entera tarde otra vez.
+* Hoy está **totalmente simulada**.
+* Depende de un sistema que **no es nuestro** y que no sabemos si nos van a dejar usar.
+* **Ya dio problemas en el TP5:** el botón decía "Guardado" pero no había archivo. U1 salió a buscarlo en Descargas y U3 tocó el botón dos veces. Pasó porque no hay conexión real con MIEL.
+
 
 Por otro lado, consideramos que **Correlatividades** podría eliminarse sin perder la capacidad de validar la hipótesis. La incluimos porque aporta valor al objetivo de centralizar información académica y permite probar una parte de la integración con Intraconsulta, pero no es necesaria para comprobar si las notificaciones y el acceso a la información de las materias resuelven el problema principal detectado.
 
