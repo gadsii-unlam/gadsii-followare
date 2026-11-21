@@ -1,6 +1,6 @@
 # Brief de Producto
 
-## Versión 6 — TP6 (10/11/2026)
+## Versión 5 — TP6 (10/11/2026)
 
 **Qué cambió respecto de la versión anterior y por qué:** Como la prueba del TP5 sostuvo la hipótesis, el foco pasa de *qué* construir a *cómo* hacer crecer el producto. Por eso agregamos la arquitectura: cómo está armado hoy el MVP (una app Android que funciona sola, sin servidor y con datos de prueba), las decisiones que heredamos al construirlo con IA, cómo sería el producto completo (un servidor propio que se conecta con MIEL e Intraconsulta y manda avisos aunque la app esté cerrada), las restricciones técnicas de la UNLaM, las tecnologías nuevas que hacen falta y la parte con más riesgo: la conexión con MIEL.
 
